@@ -1,0 +1,63 @@
+main {
+    padding: 16px;
+}
+
+p {
+    background-color: black;
+    padding: 12px;
+    border: var(--box-border);
+}
+
+.service-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.service-card {
+    flex: 1 1 280px;
+    margin-bottom: 0;
+}
+
+#pricing-card {
+    flex-grow: 2;
+}
+
+.step-list {
+    margin: 0 0 12px;
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+}
+
+.step-list li {
+    position: relative;
+    padding: 6px 0 6px 40px;
+    counter-increment: step;
+}
+
+.step-list li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-family: var(--font-title);
+    font-size: 12px;
+    color: var(--shadow);
+    background-color: var(--gold);
+    border: 2px solid var(--border);
+}
+
+
+@media (max-width: 800px) {
+    .service-list {
+        flex-direction: column;
+    }
+}

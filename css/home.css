@@ -1,0 +1,127 @@
+main {
+    display: flex;
+    justify-content: center;
+
+    .grid-column {
+        max-width: 1200px;
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: 35% auto;
+        padding: 32px 64px;
+        gap: 32px;
+        row-gap: 8px;
+    }
+
+    p {
+        background-color: black;
+        padding: 12px;
+        border: var(--box-border);
+    }
+}
+
+#top-section {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    h1 {
+        margin: 18px 16px;
+    }
+
+    h3 {
+        padding: 16px;
+        margin: 0px 16px;
+    }
+}
+
+#left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+#right-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    grid-column-start: 2;
+    grid-row-start: 2;
+
+    .card {
+        margin: 16px 0px;
+    }
+
+    #tutoring {
+        margin: 0px;
+        margin-bottom: 16px;
+        list-style-type: none;
+
+        li::before {
+            content: "▶ ";
+            font-size: x-large;
+            color: var(--list-color);
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+
+        .grid-column {
+            display: flex;
+            flex-direction: column;
+            padding: 8px 16px;
+        }
+    }
+
+    #top-section {
+        h1 {
+            font-size: 18px;
+            margin: 0px;
+            margin-top: 24px;
+        }
+
+        h3 {
+            font-size: 14px;
+            padding: 6px;
+            margin: 0px 4px;
+        }
+    }
+
+    #left-section {
+        gap: 8px;
+
+        #games {
+            margin-top: 32px;
+        }
+    }
+
+    #right-section {
+
+        h1 {
+            font-size: 16px;
+            margin: 0px;
+            margin-top: 24px;
+        }
+
+        p {
+            font-size: 12px;
+            padding: 6px;
+            margin: 0px 4px;
+        }
+
+        #tutoring {
+            padding-left: 20px;
+
+            li {
+                font-size: 12px;
+            }
+
+            li::before {
+                font-size: 14px;
+            }
+        }
+
+    }
+}
